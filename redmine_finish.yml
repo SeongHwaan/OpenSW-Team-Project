@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mysql:5.7
+        image: mysql:latest
         env:
           - name: MYSQL_DATABASE
             value: redmine
@@ -28,6 +28,10 @@ spec:
             value: password
           - name: MYSQL_ROOT_PASSWORD
             value: root_password
+          - name: MYSQL_CHARSET
+            value: utf8mb4
+          - name: MYSQL_COLLATION
+            value: utf8mb4_unicode_ci
         ports:
         - containerPort: 3306
         volumeMounts:
