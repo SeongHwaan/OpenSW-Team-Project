@@ -35,7 +35,7 @@ spec:
           mountPath: /usr/src/redmine/files
       volumes:
       - name: redmine-data
-      nodeName: k8s-node4
+      nodeName: k8s-node3
 ---
 apiVersion: v1
 kind: Service
