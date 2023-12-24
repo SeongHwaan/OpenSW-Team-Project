@@ -39,6 +39,7 @@ spec:
           mountPath: /var/lib/mysql
       volumes:
       - name: mysql-data
+      nodeName: k8s-node2
 ---
 apiVersion: v1
 kind: Service
@@ -51,7 +52,6 @@ spec:
     - protocol: TCP
       port: 3306
       targetPort: 3306
-
 ---
 
 # redmine-deployment.yaml
@@ -91,6 +91,7 @@ spec:
           mountPath: /usr/src/redmine/files
       volumes:
       - name: redmine-data
+      nodeName: k8s-node2
 ---
 apiVersion: v1
 kind: Service
