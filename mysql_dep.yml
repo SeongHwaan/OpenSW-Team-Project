@@ -19,9 +19,17 @@ spec:
         image: mysql:latest
         env:
           - name: MYSQL_DATABASE
-            value: item
+            value: redmine
+          - name: MYSQL_USER
+            value: redmine
+          - name: MYSQL_PASSWORD
+            value: password
           - name: MYSQL_ROOT_PASSWORD
-            value: root
+            value: root_password
+          - name: MYSQL_CHARSET
+            value: utf8mb4
+          - name: MYSQL_COLLATION
+            value: utf8mb4_unicode_ci
         ports:
         - containerPort: 3306
         volumeMounts:
@@ -29,4 +37,4 @@ spec:
           mountPath: /var/lib/mysql
       volumes:
       - name: mysql-data
-      nodeName: k8s-node1
+      nodeName: k8s-node3
